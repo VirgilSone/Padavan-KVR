@@ -1,5 +1,5 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build-Padavan-K2P-5.0-Virgil
+name: Build-Padavan-K2P-5.0
 
 on: 
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2PVirgil
+        TNAME: K2P-5.0
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
@@ -88,6 +88,7 @@ jobs:
         #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
         #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=y" >> .config
         #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=y" >> .config
+        
         ###############################################################################
         ##########
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
